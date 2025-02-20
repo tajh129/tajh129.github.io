@@ -1,0 +1,40 @@
+/*Taj hong
+    February 20, 2025*/
+header {
+    background-color:aqua;
+}
+
+footer {
+    background-color:aqua;
+}
+
+a:link {
+    color: #8700bd;
+  }
+  
+
+  a:visited {
+    color: #d4d4d4;
+  }
+  
+
+  a:hover {
+    color: #000000;
+  }
+  
+
+  a:active {
+    color: #eb5e00;
+  }
+
+  p {
+    font-size: 20px;
+  }
+  
+  ul {
+    font-size: 20px;
+  }
+  
+  li {
+    font-size: 20px;
+  }
