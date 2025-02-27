@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 1em;
-    background-image: url(../image/abstractPic.jpg);
+    background-image: url("../image/abstractPic.jpg");
     background-size: cover;
 }
 h1 {
@@ -35,7 +35,7 @@ h3 {
     background-color: #D69BBE;
 }
 article ul {
-    list-style-image: url(../image/peaceSign.png);
+    list-style-image: url("../image/peaceSign.png");
 }
 #outerwrapper {
     width: 650px;
