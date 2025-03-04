@@ -1,0 +1,62 @@
+/*Taj Hong
+March 4, 2025*/
+
+body {
+	background-color: #B8D1EB;
+	color: #000000;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+main {
+	background-color: #C5A98B;
+	padding: 10px;
+}
+
+h1 {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 4em;
+}
+
+h2 {
+	font-family: 'Courier New', monospace;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#outerwrapper {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+} 
+
+.floatleft { 
+float: left;
+margin-right: 3%;
+
+}
+
+.floatright {
+float: right;
+margin-left: 3%;
+
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+main ul {
+	list-style-image: url("../images/tomato.png");
+}
+
+main, footer { 
+clear: both;
+}
+
+footer {
+	background-color: #6b442a;
+	font-size: .75em;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
