@@ -1,0 +1,8 @@
+/* Practice CustomFonts Style Sheet */
+
+.websafe{
+    font-family: "Oswald", Courier, "Courier New";
+}
+.google {
+    font-family: "Oswald", 'Dosis', Georgia, serif;
+}
