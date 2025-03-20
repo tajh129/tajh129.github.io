@@ -23,3 +23,43 @@ li a {
     text-decoration: none;
     color: white;
 }
+
+.projectExamples {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.projectBox {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    width: 31%;
+}
+
+.projectBox h4.semester {
+    background:#32211A; 
+    color: #FFFFFF;
+    padding: 15px;
+}
+
+.projectBox img {
+    margin-bottom: 20px;
+}
+
+.projectBox a.button {
+    display: block;
+    width: 40%;
+    margin: 10px auto;
+    color: #FFFFFF;
+    background: #32211A;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 1px;
+}
+footer {
+    clear: left;
+}
