@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Taj Hong
+     March 11, 2025 -->
+<html lang="en">
+<head>
+    <title>Contact Form</title>
+    <meta name="author" content="Taj Hong" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Taj Hong web developer Boise Idaho" />
+    <meta name="keywords" content="client-side server-side C# HTML CSS JavaScript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/contactstyles.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+	<header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    <form action="mailto:tajhong@my.cwi.edu?subject=Personal%20Portfolio%20Mail" enctype="text/plain" method="POST">
+        <!-- Group Fields Together-->
+        <fieldset>
+        <legend>How do I contact you?</legend>
+            <!-- Company input type="text" completed below for you as an example-->
+            <div>         
+                <label for="compName">Company:</label>
+                <input type="text" id="compName" name="compName"><br>
+            </div>
+            <div>
+                <label for="contactName">Person to Contact:</label>
+                <input type="text" id="contactName" name="contactName"><br>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Your Email" required/>
+            </div>
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+            </div>
+        </fieldset>
+
+        <!-- Group Fields Together, page 104 -->
+        <fieldset>
+            <legend>What opportunities are available at your company?</legend>
+            <label for="position">Type of Position:</label>
+            <select name="position" id="position">
+                <option value="intern">Internship</option>
+                <option value="part">Part-time</option>
+                <option value="full">Full-time</option>
+                <option value="contract">Contract</option>
+                <option value="temp">Temporary</option>
+                <option value="oncall">On call</option>
+            </select><br><br>
+
+            <!-- Radio Buttons, https://www.w3schools.com/tags/att_input_type_radio.asp -->
+            <label for="find">How did you find me?</label><br>
+            <input type="radio" id="linkedin" name="find" value="LinkedIn">
+            <label for="linkedin">LinkedIn</label>
+            <input type="radio" id="jobfair" name="find" value="JobFair">
+            <label for="jobfair">Job Fair</label>
+            <input type="radio" id="partner" name="find" value="CWIpartner">
+            <label for="partner">CWI Partner</label>
+            <input type="radio" id="other" name="find" value="Other">
+            <label for="other">Other</label><br>
+            <div>
+                <label for="interviewprep"></label>
+                <textarea id="interviewprep" name="interviewprep" rows="10" cols="100" placeholder="How should I prepare for the interview?"></textarea>
+
+            </div>
+        </fieldset>
+		<input type="submit" id="submit" value="Submit" class="btn">
+     </form>
+<footer>
+            <hr>
+            <p class="linkfoot">
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> |
+                <a href="https://www.github.com" target="_blank">GitHub</a>
+            </p>
+            <p>&copy; 2025 My Website</p>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.projectExamples {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.projectBox {
+    background: #313857;
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    width: 31%;
+}
+
+.projectBox h4.semester {
+    background:#262B44; 
+    color: #FFFFFF;
+    padding: 15px;
+}
+
+.projectBox img {
+    margin-bottom: 20px;
+}
+
+.projectBox a.button {
+    display: block;
+    width: 40%;
+    margin: 10px auto;
+    color: #FFFFFF;
+    background: #542439;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 1px;
+}
+footer {
+    clear: left;
+}
