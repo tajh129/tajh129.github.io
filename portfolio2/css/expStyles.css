@@ -3,13 +3,17 @@
     margin: 0 auto;
 }
 
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
 .projectBox {
     background: #313857;
     border: 1px solid #FFFFFF;
-    float: left;
     margin: 10px;
     text-align: center;
-    width: 31%;
+    width: 30%;
 }
 
 .projectBox h4.semester {
