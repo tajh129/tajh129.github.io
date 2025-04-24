@@ -1,0 +1,87 @@
+/*Taj Hong
+April 24, 2025*/
+$colorBody: #B8D1EB;
+$colorMain: #C5A98B;
+$colorNav: #7a6b48;
+$colorHover: #8B0000;
+
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@font-face {
+	font-family: "Quicksand-Bold";
+	src: url("../fonts/Quicksand-Bold.otf") format("opentype");
+}
+
+body { 
+	background-color: $colorBody;
+	font-family: "Times New Roman", serif;
+}
+
+#outerwrapper { 
+    width: 70%;
+	margin: 0 auto;
+}
+
+.floatleft {	
+	float: left;
+	margin-right: 3%;
+}
+
+h1 {
+	font-family: 'Righteous', cursive;
+	font-size: 60px;
+}
+
+h2 {
+	font-family: 'Quicksand-Bold', Arial, sans-serif;
+	font-weight:normal;
+	font-style:italic;
+}
+
+main {	
+	background-color: $colorMain;
+	padding: 10px;
+    & > ul {
+        list-style-image: url(../images/tomatoeBullet.png);
+    }
+}
+
+nav {
+    & > ul {
+        list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    width: 200px;
+	    background-color: $colorMain;
+        & > li {
+            & > a {
+                display: block;
+	            color: #000;
+	            padding: 8px 16px;
+	            text-decoration: none;
+                &.active {
+	                background-color: $colorNav;
+                    color: #000;
+                }
+                &:hover:not(.active) {
+                    background-color: $colorNav;
+	                color: $colorHover;
+                }
+            }
+        }
+    }
+}
+
+.floatright {
+	float: right;
+	margin-left: 3%;
+}
+
+footer {
+	font-size: 0.75em;
+	text-align: center;
+	background-color: $colorNav;
+	padding: 10px 0px;
+}
+main, footer {
+    clear: both;
+}
