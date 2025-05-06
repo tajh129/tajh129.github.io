@@ -1,0 +1,14 @@
+.google {
+    font-family: "Cascadia Code", 'Times New Roman', Arial, serif;
+    font-size: 24px;
+}
+
+.boldtext {
+    font-weight: bold;
+    color: #0b0e1a;
+}
+
+.italictext {
+    font-style: italic;
+    color: #4C517A;
+}
