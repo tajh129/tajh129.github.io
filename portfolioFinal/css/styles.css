@@ -8,6 +8,14 @@
     font-style: normal;
 }
 
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -15,6 +23,8 @@ ul {
     overflow: hidden;
     background-image: linear-gradient(to right, #313857, #262b44 80%);
     font-family: 'elsie', 'Times New Roman', Arial, serif;
+    display: flex;
+    justify-content: center;
 }
 
 li {
@@ -33,6 +43,7 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     color: white;
+    text-align: center;
 }
 
 li a:hover {
