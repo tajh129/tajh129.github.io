@@ -51,77 +51,26 @@ nav li a:hover {
     background-color: #632A43;
 }
 /*End of Navbar*/
-main {
+.center-content {
     display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    position: relative;
-}
-
-.container {
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.p-link {
-    color:white;
-}
-
-.p-link:visited {
-    color: #7ACDFF;
-}
-
-.p-link:hover {
-    color: #7ACDFF;
-}
-
-.p-link:active {
-    color: white;
-}
-
-.side-image {
-    position: absolute;
-    width: 200px;
-    height: auto;
-    z-index: 1;
-}
-
-.left {
-    left: -60px;
-    top: 0;
-}
-
-.image {
-    position: center;
-    width: 150px;
-    height: auto;
-}
-
-.about-box {
-    background-color: #23304E;
-    padding: 40px;
-    border-radius: 25px;
-    max-width: 600px;
     text-align: center;
-    z-index: 2;
-    position: relative;
+    padding: 60px 20px;
 }
 
-    .about-box h1 {
-        font-family: 'Bodoni Moda', 'Bodoni', serif;
-        font-size: 48px;
-        color: #7ACDFF;
-        margin-bottom: 20px;
+    .center-content img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+        border-radius: 10px;
     }
 
-    .about-box p {
+    .center-content p {
         font-family: 'Comic Sans MS', 'Comic Sans', cursive;
         font-size: 20px;
-        line-height: 1.8;
         color: #ffffff;
+        max-width: 600px;
     }
