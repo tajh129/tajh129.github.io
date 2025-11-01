@@ -22,22 +22,70 @@
     </nav>
 
     <main>
-    <div class="container">
-        <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
+        <div class="container">
+            <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
 
-        <section class="welcome-box">
-            <h1>Welcome!</h1>
-            <p>
-                This is the homepage for a very unprofessional portfolio of myself. What? You didn't think I'd talk in
-                the first person on this page? As I said, very unprofessional. There's not much else for the homepage anyways,
-                so why not have a fun introduction on the front. If you're here and you don't know who I am at all, then I don't
-                know how you got here or who you are, but please leave. I don't like you. You're kinda weird if you're here randomly.
-                If you DO know who I am, then have fun looking around and learning more about me.
-            </p>
-        </section>
+            <section class="welcome-box">
+                <h1>Welcome!</h1>
+                <p>
+                    This is the homepage for a very unprofessional portfolio of myself. What? You didn't think I'd talk in
+                    the first person on this page? As I said, very unprofessional. There's not much else for the homepage anyways,
+                    so why not have a fun introduction on the front. If you're here and you don't know who I am at all, then I don't
+                    know how you got here or who you are, but please leave. I don't like you. You're kinda weird if you're here randomly.
+                    If you DO know who I am, then have fun looking around and learning more about me. (By the way, there's gonna be a jukebox 
+                    at the bottom of every page, so if you wanna read while listening to music and the songs don't automatically play when loading
+                    each page, just scroll down there and hit the jukebox first.)
+                </p>
+            </section>
 
-        <img src="images/vertinpoint.png" alt="Vertin from Reverse: 1999 pointing towards something behind her" class="side-image right">
-    </div>
+            <img src="images/vertinpoint.png" alt="Vertin from Reverse: 1999 pointing towards something behind her" class="side-image right">
+        </div>
     </main>
+
+    <div class="player-center">
+    <audio id="player" src="audio/VA-11 Hall-A - Snowfall.mp3" loop></audio>
+
+    <div id="nowPlaying">Now Playing: </div>
+    <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+        const player = document.getElementById("player");
+        const playButton = document.getElementById("playButton");
+        const nowPlayingEl = document.getElementById("nowPlaying");
+
+        window.addEventListener("load", () => {
+            const rawFilename = player.src.split("/").pop();
+            const decoded = decodeURIComponent(rawFilename);
+            const filename = decoded.replace(/\.[^/.]+$/, "");
+            nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+            player.play().then(() => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            }).catch((error) => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+                nowPlayingEl.textContent += " (Autoplay blocked)";
+                console.warn("Autoplay blocked:", error);
+            });
+        });
+
+        playButton.addEventListener("click", () => {
+            if (player.paused) {
+                player.play();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            } else {
+                player.pause();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+            }
+        });
+    </script>
 </body>
 </html>

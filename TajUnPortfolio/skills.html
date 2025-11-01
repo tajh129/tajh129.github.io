@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get to know the skills of Taj. This ranges from school and work related skills to his gaming skills, which he's probably way better at than you.">
     <title>My Skills</title>
-    <link rel="stylesheet" href="CSS/wipStyles.css">
+    <link rel="stylesheet" href="CSS/skillStyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,10 +22,100 @@
     </nav>
 
     <main>
-        <div class="center-content">
-            <img src="images/Mewo_sprite.gif" alt="A GIF of Mewo, the black cat from OMORI, sleeping.">
-            <p>Waiting for something to happen?</p>
+        <div class="container">
+            <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
+
+            <section class="about-box">
+                <h1>My Skills</h1>
+                <h2>Professional</h2>
+                <p>
+                    In terms of basic skills I can use in both school and work-related tasks, I'm quite good at organizationa and am a quick learner.
+                    I follow orders given and am not afraid to ask questions. When it comes to more specific skills though, I'm pretty decent at coding in
+                    languages like HTML, and can be very professional with my grammar. I'm also really efficient when I'm working late at night. That's
+                    as much as I can think of for my professional skills, as my personal skills are a lot more interesting.
+                </p>
+                <h2><br>Personal</h2>
+                <p>
+                    Instead of writing it out in a short paragraph like I did with the other section, I'm gonna talk about some different and notable skills
+                    I have in chunks.
+                </p>
+                <h3><br>Skill Level</h3>
+                <p>
+                    Firstly, I'm quite skilled in basically any game I play. I can quickly learn a game to become at least decent at it within a short timespan,
+                    with some games I end up being really good at immediately, or end up just playing long enough to reach that level. I'm nowhere near the top
+                    of any game I play, but I'm at least above average in most of them.
+                </p>
+                <h3><br>Coding/Modding</h3>
+                <p>
+                    Yes, coding is also here as a personal skill. Why? Because I code for some games that I play to create mods. The one I'm most adept in is JSON
+                    for Minecraft. More specifically, there's a mod called Origins that lets users esentially make classes/races they can choose to have certain
+                    powers and abilities. I have made a ton of those for myself and my friends to use. Another thing I mod from time to time is a game called
+                    Chrono Ark, which is a roguelike with a cast of characters you can make a party with for your run. I have modded in a couple characters for
+                    that game as well. There's also other games I mod, but that's more of just replacing an image or something so i don't count that as much.
+                </p>
+                <h3><br>Luck</h3>
+                <p>
+                    Yes, luck is a skill and I'm quite adept in it. My luck isn't so ridiculously good that I've won the lottery(at least not yet), but my luck is
+                    definitely above average. My luck can also be slightly manipulated. While it doesn't seem like this should be possible, it's not a power I can
+                    control, it's just the equivalent to like karma for my luck. For instance, if something unlucky happens to me that I didn't really want, it usually
+                    means that I'll get lucky for something else later, and vice versa. When compared to my friends especially, I'm the luckiest person in our group.
+                </p>
+                <h3><br>Bad Time Simulator</h3>
+                <img class="image" src="images/sans-undertale.gif" alt="A GIF of Sans the Skeleton from Undertale">
+                <p>
+                    Okay this is one of my best skills, and it's just that I'm really good at Bad Time Simulator. I can basically just open it up at any time and beat Sans
+                    first try. I just randomly do this sometimes, especially when I need to wait a few minutes for something. Sometimes I'll even fight Sans again just because.
+                    I literally decided to beat him while making this page. A lot of people can't even beat Sans in multiple tries, so I think it's a pretty good skill to be able
+                    to beat him in one. If you wanna try it out, go to <a href="https://jcw87.github.io/c2-sans-fight" target="_blank" class="p-link">Bad Time Simulator</a> here.
+                </p>
+            </section>
         </div>
     </main>
+
+    <div class="player-center">
+        <audio id="player" src="audio/VA-11 Hall-A - Every Day Is Night.mp3" loop></audio>
+
+        <div id="nowPlaying">Now Playing: </div>
+        <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+    const player = document.getElementById("player");
+    const playButton = document.getElementById("playButton");
+    const nowPlayingEl = document.getElementById("nowPlaying");
+
+    window.addEventListener("load", () => {
+        const rawFilename = player.src.split("/").pop();
+        const decoded = decodeURIComponent(rawFilename);
+        const filename = decoded.replace(/\.[^/.]+$/, "");
+        nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+        player.play().then(() => {
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Pause";
+            playButton.classList.remove("paused");
+        }).catch((error) => {
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Play";
+            playButton.classList.add("paused");
+            nowPlayingEl.textContent += " (Autoplay blocked)";
+            console.warn("Autoplay blocked:", error);
+        });
+    });
+
+    playButton.addEventListener("click", () => {
+        if (player.paused) {
+            player.play();
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Pause";
+            playButton.classList.remove("paused");
+        } else {
+            player.pause();
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Play";
+            playButton.classList.add("paused");
+        }
+    });
+    </script>
 </body>
 </html>

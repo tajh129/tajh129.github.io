@@ -22,24 +22,70 @@
     </nav>
 
     <main>
-    <div class="container">
-        <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
+        <div class="container">
+            <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
 
-        <section class="welcome-box">
-            <h1>Welcome!</h1>
-            <p>
-                You're back! Did you have fun looking around? Or did you only go to like, one page and just come back here.
-                I'm not judging. Unless you're that guy that I don't know that for some reason decided to stay on this site
-                and look around. Like, you're weird dude, go do something else. We don't know each other, so why are you
-                looking at this website? For those that actually have a reason to be on this website, I hope you learned
-                more about me without me having to go through the trouble of talking about it IRL. And if you're reading this,
-                you're probably wondering why this homepage dialogue is different. Well, that's a secret that you can probably
-                figure out pretty quickly if you think about it for a little.
-            </p>
-        </section>
+            <section class="welcome-box">
+                <h1>Welcome!</h1>
+                <p>
+                    You're back! Did you have fun looking around? Or did you only go to like, one page and just come back here.
+                    I'm not judging. Unless you're that guy that I don't know that for some reason decided to stay on this site
+                    and look around. Like, you're weird dude, go do something else. We don't know each other, so why are you
+                    looking at this website? For those that actually have a reason to be on this website, I hope you learned
+                    more about me without me having to go through the trouble of talking about it IRL. And if you're reading this,
+                    you're probably wondering why this homepage dialogue is different. Well, that's a secret that you can probably
+                    figure out pretty quickly if you think about it for a little.
+                </p>
+            </section>
 
-        <img src="images/vertinpoint.png" alt="Vertin from Reverse: 1999 pointing towards something behind her" class="side-image right">
-    </div>
+            <img src="images/vertinpoint.png" alt="Vertin from Reverse: 1999 pointing towards something behind her" class="side-image right">
+        </div>
     </main>
+
+    <div class="player-center">
+        <audio id="player" src="audio/VA-11 Hall-A - Snowfall.mp3" loop></audio>
+
+        <div id="nowPlaying">Now Playing: </div>
+        <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+    const player = document.getElementById("player");
+    const playButton = document.getElementById("playButton");
+    const nowPlayingEl = document.getElementById("nowPlaying");
+
+    window.addEventListener("load", () => {
+        const rawFilename = player.src.split("/").pop();
+        const decoded = decodeURIComponent(rawFilename);
+        const filename = decoded.replace(/\.[^/.]+$/, "");
+        nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+        player.play().then(() => {
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Pause";
+            playButton.classList.remove("paused");
+        }).catch((error) => {
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Play";
+            playButton.classList.add("paused");
+            nowPlayingEl.textContent += " (Autoplay blocked)";
+            console.warn("Autoplay blocked:", error);
+        });
+    });
+
+    playButton.addEventListener("click", () => {
+        if (player.paused) {
+            player.play();
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Pause";
+            playButton.classList.remove("paused");
+        } else {
+            player.pause();
+            playButton.src = "images/jukebox.png";
+            playButton.alt = "Play";
+            playButton.classList.add("paused");
+        }
+    });
+    </script>
 </body>
 </html>

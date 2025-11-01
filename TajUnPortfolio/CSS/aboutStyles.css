@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Va11Halla";
+    src: url("../fonts/CyberpunkWaifus.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +16,44 @@ body {
     font-family: 'Bodoni Moda', 'Bodoni', serif;
     color: #ffffff;
 }
+
+/*Audio*/
+.player-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+audio {
+    display: none;
+}
+
+.jukebox {
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.2s ease;
+    vertical-align: middle;
+}
+
+    .jukebox:hover {
+        transform: scale(1.1);
+    }
+
+    .jukebox.paused {
+        filter: brightness(0.6);
+    }
+
+#nowPlaying {
+    font-family: 'Va11Halla', 'Bodoni Moda', serif;
+    font-size: 16px;
+    margin-top: 20px;
+}
+/*End Audio*/
 
 /* Navbar */
 nav {
