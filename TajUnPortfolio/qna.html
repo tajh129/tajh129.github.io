@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ask Taj questions, or look at some frequently asked ones. If you do decide to ask a question, no guarantee there'll be an answer.">
     <title>QnA</title>
-    <link rel="stylesheet" href="CSS/wipStyles.css">
+    <link rel="stylesheet" href="CSS/qnaStyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,10 +22,74 @@
     </nav>
 
     <main>
-        <div class="center-content">
-            <img src="images/Mewo_sprite.gif" alt="A GIF of Mewo, the black cat from OMORI, sleeping.">
-            <p>Waiting for something to happen?</p>
+        <div class="container">
+            <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
+            <section class="qna-box">
+                <h1 class="qna-space">Ask a Question</h1>
+                <form id="qnaForm" action="mailto:tajh.pro@gmail.com" method="POST" enctype="text/plain">
+                    <div class="qna-space">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="qna-space">
+                        <label for="username">Name:</label>
+                        <input type="text" id="username" name="username" placeholder="Your name" required>
+                    </div>
+                    <div class="qna-space">
+                        <label for="message"></label>
+                        <textarea id="message" name="message" rows="8" cols="35" placeholder="Type your question or message here..." required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+            <img src="images/vertinpoint.png" alt="Vertin from Reverse: 1999 pointing towards something behind her" class="side-image right">
         </div>
     </main>
+
+    <div class="player-center">
+        <audio id="player" src="audio/VA-11 Hall-A - Nighttime Maneuvers.mp3" loop></audio>
+
+        <div id="nowPlaying">Now Playing: </div>
+        <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+    const player = document.getElementById("player");
+    const playButton = document.getElementById("playButton");
+    const nowPlayingEl = document.getElementById("nowPlaying");
+
+    window.addEventListener("load", () => {
+    const rawFilename = player.src.split("/").pop();
+    const decoded = decodeURIComponent(rawFilename);
+    const filename = decoded.replace(/\.[^/.]+$/, "");
+    nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+    player.play().then(() => {
+        playButton.src = "images/jukebox.png";
+        playButton.alt = "Pause";
+        playButton.classList.remove("paused");
+    }).catch((error) => {
+        playButton.src = "images/jukebox.png";
+        playButton.alt = "Play";
+        playButton.classList.add("paused");
+        nowPlayingEl.textContent += " (Autoplay blocked)";
+        console.warn("Autoplay blocked:", error);
+        });
+    });
+
+    playButton.addEventListener("click", () => {
+    if (player.paused) {
+        player.play();
+        playButton.src = "images/jukebox.png";
+        playButton.alt = "Pause";
+        playButton.classList.remove("paused");
+    } else {
+        player.pause();
+        playButton.src = "images/jukebox.png";
+        playButton.alt = "Play";
+        playButton.classList.add("paused");
+        }
+    });
+    </script>
 </body>
 </html>
