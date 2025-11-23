@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Va11Halla";
+    src: url("../fonts/CyberpunkWaifus.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/r99CObg.jpg);
+    background-color: #262B44;
+    font-family: 'Bodoni Moda', 'Bodoni', serif;
+    color: #ffffff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    position: center;
+    width: 150px;
+    height: auto;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.welcome-box {
+    background-color: #23304E;
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 600px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+    .welcome-box h1 {
+        font-family: 'Bodoni Moda', 'Bodoni', serif;
+        font-size: 48px;
+        color: #7ACDFF;
+        margin-bottom: 20px;
+    }
+
+    .welcome-box a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 30px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: background 0.3s;
+        background-color: #8E3C60;
+    }
+
+    a:hover {
+        background-color: #632A43;
+    }
+
+    .welcome-box p {
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #ffffff;
+    }
