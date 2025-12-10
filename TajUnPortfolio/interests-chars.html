@@ -83,6 +83,7 @@
     <div class="container">
         <section class="about-box">
             <h2></h2>
+            <h3></h3>
             <p></p>
         </section>
     </div>
@@ -99,22 +100,39 @@
             "Garnet - Eternal Return"
         ];
 
+        const slideQuote = [
+            "\"Good deeds and bad... In the end, all will be placed upon the scales.\"",
+            "\"Welcome to the Albright Clinic. My name is Bianca Abercrombie.\"",
+            "\"My plants have never been more ravenous! I'll graft these together to create a botanical nightmare! Fusion Summon!\"",
+            "\"I got a lot of questions, but most of 'em seems even the adults don't know. So I suppose I best figure them out myself.\"",
+            "\"I'll show you the unseen.\"",
+            "\"Do you need me? That makes me happy.\""
+        ];
+
         const slideText = [
-            /*Cyno*/"",
-            /*Bianca*/"",
-            /*Yuri*/"",
-            /*FP*/"",
-            /*KamenX*/"",
-            /*Garnet*/""
+            /*Cyno*/"I don't play this game anymore, but Cyno is still a character I enjoy a lot. His design is still of one of my favourites from the game, as I really like the egyptian aesthetic. His gameplay, especially his burst, "
+            + "was also really fun. When I played, my team composition was built around him. His character is also just me: A guy who plays card games and likes puns.",
+            /*Bianca*/"Bianca is a nurse at the Albright Clinic and the protagonist from the webcomic Clinic of Horrors. She shows very little emotion, but also shows she both cares and doesn't take anyone's shit. "
+            + "I enjoy her character a lot because of the fun interactions she has with the other characters, and also because of the character arc and development she gets throughout the story.",
+            /*Yuri*/"One of four pieces of a whole being known as Zarc, Yuri has three counterparts that look similar to him. While the other counterparts care about doing the right thing and helping others, Yuri is "
+            + "a sadistic duelist who does what he wants and makes fun of those he finds weaker than him. You know a duel's gonna be good when Yuri's involved, and his Predplant deck is one of my favourite archetypes in Yu-Gi-Oh!",
+            /*FP*/"Flutterpage(Real name Liberti) is an arcanist with the ability to control the wind, allowing her to float and fly freely. She was given the nickname 'Little Miss Why' due to her constant asking of questions "
+            + "of things she doesn't understand. She's shown during the story to be quite a silly character, and her kit is one of the best in the game. Overall she's my favourite character in Reverse: 1999 currently.",
+            /*KamenX*/"Being the strongest blader in Beyblade X, Ekusu Kurosu, or Kamen X, has defeated multiple foes that threatened the current state of Beyblade. He's also part of the top team in the show, and is currently "
+            + "still undefeated. Despite all this, Kamen X doesn't care about any of it. All he cares about is fighting strong bladers and having fun. His character is both extremely cool and extremely silly, as he'll go so far "
+            + "as to throw tantrums if he can't have a beybattle with someone. I've seen a lot of complaints about Kamen X being boring because of how strong he is, but personally I think that's one of the best things about him.",
+            /*Garnet*/"Being my favourite character ever, Garnet is and forever will be my main on Eternal Return. Her design is exactly my style, from the outfit to the colour scheme. Her kit is insanely fun, as characters that "
+            + "fight using HP costs is my favourite gimmick, and being able to instakill someone with her ult is awesome. Her sadomasochist personality also adds so much to her character, with things like the Eternal Return webcomics "
+            + "and emotes showing how silly she can actually be. She's so much fun to play and one of the main reasons I enjoy Eternal Return so much."
         ];
 
         const slideThemes = [
-            { body: "#1B700A", box: "#5B3B11", navActive: "#0686FA", navHover: "#055EAD" }, //Cyno
-            { body: "#412F68", box: "#AA5269", navActive: "#FFAF4F", navHover: "#AF7936" }, //Bianca
-            { body: "#333E63", box: "#414F82", navActive: "#9092BB", navHover: "#696A87" }, //Yuri
+            { body: "#361E45", box: "#593D6B", navActive: "#F0BD46", navHover: "#C2993A" }, //Cyno
+            { body: "#FF8AA6", box: "#B8445C", navActive: "#62C2F5", navHover: "#4E98BF" }, //Bianca
+            { body: "#7C3E94", box: "#2F4380", navActive: "#2F8038", navHover: "#1C5422" }, //Yuri
             { body: "#1C2B3A", box: "#3C5A62", navActive: "#2E6A52", navHover: "#214C3B" }, //FP
-            { body: "#1C2B3A", box: "#3C5A62", navActive: "#2E6A52", navHover: "#214C3B" }, //KamenX
-            { body: "#1A1F25", box: "#434C5B", navActive: "#A42E24", navHover: "#771F1D" }  //Garnet
+            { body: "#1E4FC9", box: "#000000", navActive: "#E82542", navHover: "#AD2135" }, //KamenX
+            { body: "#1A1F25", box: "#434C5B", navActive: "#C20000", navHover: "#7D0000" }  //Garnet
         ];
 
         showSlide(slideIndex);
@@ -136,6 +154,7 @@
             slides[slideIndex - 1].style.display = "block";
 
             document.querySelector(".about-box h2").textContent = slideHeader[slideIndex - 1];
+            document.querySelector(".about-box h3").textContent = slideQuote[slideIndex - 1];
             document.querySelector(".about-box p").textContent = slideText[slideIndex - 1];
 
             const theme = slideThemes[slideIndex - 1];

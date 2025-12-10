@@ -145,6 +145,14 @@ nav li a:hover {
         margin-bottom: 20px;
     }
 
+    .about-box h3 {
+        font-family: 'Bodoni Moda', 'Bodoni', serif;
+        font-style: italic;
+        font-size: 18px;
+        color: #9E9E9E;
+        margin-bottom: 20px;
+    }
+
     .about-box p {
         font-family: 'Comic Sans MS', 'Comic Sans', cursive;
         font-size: 20px;
