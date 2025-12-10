@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get to know Taj and all the personal things he likes, ranging from games to characters and pokemon. Yes it's all going to be gaming related.">
     <title>My Interests</title>
-    <link rel="stylesheet" href="CSS/wipStyles.css">
+    <link rel="stylesheet" href="CSS/interestStyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,10 +22,85 @@
     </nav>
 
     <main>
-        <div class="center-content">
-            <img src="images/Mewo_sprite.gif" alt="A GIF of Mewo, the black cat from OMORI, sleeping.">
-            <p>Waiting for something to happen?</p>
+        <div class="container">
+            <img src="images/fubukiplush.png" alt="Plushie of Fubuki Himekawa from Yo-kai Watch Jam" class="side-image left">
+            <section class="about-box">
+                <h1>My Interests</h1>
+                <p>These are a few different categories of my interests. Each one leads you to a list of individual things so you can learn more about everything I like.</p>
+                <br>
+                <div class="image-row">
+                    <div>
+                        <a href="interests-games.html">
+                        <img class="image" src="images/interests_game.jpg" alt="Image of the game Reverse: 1999, used as an indicator to go to a list of games.">
+                        </a>
+                        <h2>Games</h2>
+                        <p>Learn more about some of the games I play.</p>
+                    </div>
+
+                    <div>
+                        <a href="interests-chars.html">
+                        <img class="image" src="images/interests_char.jpg" alt="Image of Kamen X from Beyblade X, used as an indicator to go to a list of characters.">
+                        </a>
+                        <h2>Characters</h2>
+                        <p>Learn more about some of my favourite characters in fiction.</p>
+                    </div>
+
+                    <div>
+                        <a href="interests-pkmn.html">
+                        <img class="image" src="images/interests_pkmn.png" alt="Image of smoliv from Pokémon, used as an indicator to go to a list of pokémon.">
+                        </a>
+                        <h2>Pokémon</h2>
+                        <p>Learn more about some of my favourite pokémon.</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
+
+    <div class="player-center">
+        <audio id="player" src="audio/VA-11 Hall-A - Friendly Conversation.mp3" loop></audio>
+
+        <div id="nowPlaying">Now Playing: </div>
+        <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+        const player = document.getElementById("player");
+        const playButton = document.getElementById("playButton");
+        const nowPlayingEl = document.getElementById("nowPlaying");
+
+        window.addEventListener("load", () => {
+            const rawFilename = player.src.split("/").pop();
+            const decoded = decodeURIComponent(rawFilename);
+            const filename = decoded.replace(/\.[^/.]+$/, "");
+            nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+            player.play().then(() => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            }).catch((error) => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+                nowPlayingEl.textContent += " (Autoplay blocked)";
+                console.warn("Autoplay blocked:", error);
+            });
+        });
+
+        playButton.addEventListener("click", () => {
+            if (player.paused) {
+                player.play();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            } else {
+                player.pause();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+            }
+        });
+    </script>
 </body>
 </html>

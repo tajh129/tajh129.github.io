@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hi, I'm Taj Hong, and this is my unprofessional portfolio. This website is mostly meant for those who want to know more about me and my personal interests.">
+    <title>Taj's Favourite Pokémon</title>
+    <link rel="stylesheet" href="CSS/interestsPkmnStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="return.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li class="active"><a href="interests.html">Interests</a></li>
+                <li><a href="qna.html">QnA</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="images/Iron_Valiant.png" alt="Cover image of the game Minecraft, a sandbox survival game.">
+        </div>
+
+        <div class="slide fade">
+            <img src="images/Phantump.png" alt="Cover image of PEAK, a multiplayer co-op roguelike.">
+        </div>
+
+        <div class="slide fade">
+            <img src="images/Marshadow.png" alt="Cover image of Chrono Ark, a roguelike card game.">
+        </div>
+
+        <div class="slide fade">
+            <img src="images/Magikarp.png" alt="Cover image of Eternal Return, an online MOBA battle royale.">
+        </div>
+
+        <div class="slide fade">
+            <img src="images/Smoliv.png" alt="Cover image of Reverse: 1999, one of the best games ever.">
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+
+    </div>
+    <div class="container">
+        <section class="about-box">
+            <h2></h2>
+            <p></p>
+        </section>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+
+        const slideHeader = [
+            "Iron Valiant",
+            "Phantump",
+            "Marshadow",
+            "Magikarp",
+            "Smoliv"
+        ];
+
+        const slideText = [
+            /*IV*/"#1006<br>Paradox Pokémon<br>Fairy/Fighting",
+            /*Stump*/"#0708<br>Stump Pokémon<br>Ghost/Grass",
+            /*Marsh*/"#0802<br>Gloomdweller Pokémon<br>Fighting/Ghost",
+            /*Karp*/"#0129<br>Fish Pokémon<br>Water",
+            /*Smoliv*/"#0928<br>Olive Pokémon<br>Grass/Normal"
+        ];
+
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            document.querySelector(".about-box h2").textContent = slideHeader[slideIndex - 1];
+            document.querySelector(".about-box p").innerHTML = slideText[slideIndex - 1];
+        }
+    </script>
+
+    <div class="player-center">
+        <audio id="player" src="audio/Reverse 1999 - Yesterday, Today, Tomorrow.mp3" loop></audio>
+
+        <div id="nowPlaying">Now Playing: </div>
+        <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+        const player = document.getElementById("player");
+        const playButton = document.getElementById("playButton");
+        const nowPlayingEl = document.getElementById("nowPlaying");
+
+        window.addEventListener("load", () => {
+            const rawFilename = player.src.split("/").pop();
+            const decoded = decodeURIComponent(rawFilename);
+            const filename = decoded.replace(/\.[^/.]+$/, "");
+            nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+            player.play().then(() => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            }).catch((error) => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+                nowPlayingEl.textContent += " (Autoplay blocked)";
+                console.warn("Autoplay blocked:", error);
+            });
+        });
+
+        playButton.addEventListener("click", () => {
+            if (player.paused) {
+                player.play();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            } else {
+                player.pause();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+            }
+        });
+    </script>
+
+</body>
+</html>

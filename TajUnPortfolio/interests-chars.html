@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hi, I'm Taj Hong, and this is my unprofessional portfolio. This website is mostly meant for those who want to know more about me and my personal interests.">
+    <title>Taj's Favourite Characters</title>
+    <link rel="stylesheet" href="CSS/interestsCharStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="return.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li class="active"><a href="interests.html">Interests</a></li>
+                <li><a href="qna.html">QnA</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/J9WuPBOC_S8" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+        </div>
+
+        <div class="slide fade">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kkees8DxVoA"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+        </div>
+
+        <div class="slide fade">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9ktpXAdQiMk"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+        </div>
+
+        <div class="slide fade">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ko-SwMIoMGs"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+        </div>
+
+        <div class="slide fade">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/J9WuPBOC_S8"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+
+    </div>
+    <div class="container">
+        <section class="about-box">
+            <h2></h2>
+            <p></p>
+        </section>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+
+        const slideHeader = [
+            "Minecraft",
+            "PEAK",
+            "Chrono Ark",
+            "Eternal Return",
+            "Reverse: 1999"
+        ];
+
+        const slideText = [
+            /*MC*/"If you don't know what Minecraft is, how? It's the highest-selling video game as of 2025. Well for the 2 people that don't know, it's a sandbox survival game, where creativity rules. I like playing this game a lot with friends because we can basically do whatever we want in this game. "
+            + "I also like to code datapacks for this game, which is essentially just a mod without actually being a mod. While this is one of my favourite games, one thing that makes it lose points is the fact that it only gets really fun when playing with a lot of friends, which is something I can't do often.",
+            /*PEAK*/"I'm not a big fan of games that the gaming community now defines as \"friendslop\", but PEAK is one of the few games I enjoy a lot. It's ridiculously simple: Climb mountains, reach the PEAK, try not to die. The visuals are also really charming, and the players having proximity chat adds a lot of fun. "
+            + "The one problem this game has is quite similar to Minecraft though, which is that the game is only really fun with friends, hence the word \"friendslop\". While it only needs a couple friends to play, the experience isn't nearly as fun the less players there are.",
+            /*CARK*/"If you're a fan of roguelikes and card games like Slay the Spire, then you'd probably like this game. Chrono Ark is a roguelike card game where you form a party of characters and build them throughout the run. The game also has an overarching story and an easy gamemode called Hope Mode for those who are "
+            + "new to this game genre or aren't too good at it. While the base gameplay is a lot of fun, Chrono Ark also has mod support, and an in-built way to make mods. I've made a couple of mods myself, and find it to be a really fun experience. I would have hundreds more hours on this game, but the thing that "
+            + "keeps me from playing it more is the same thing I have with all roguelikes, which is that eventually it gets repetitive. One run is actually quite short, with a very linear path if you don't have mods. While this is one of the most fun games I play, it's a game I don't play as often as the others.",
+            /*ER*/"League of Legends Battle Royale. That's what this is and it's really fun for me, which is funny because I don't play League of Legends or other battle royale games. Eternal Return is a MOBA game where you get into teams of 3 and fight to be the last team standing, collecting and crafting gear to make your character's "
+            + "build stronger. I've played this game since its official release, which is good because nowadays this game is VERY beginner unfriendly. There's actually a lot of problems this game has, but I enjoy the gameplay enough that I really don't care about any of that. It's one of the few games where I can play and not get "
+            + "upset at a game I had or at my teammates for not doing well, which is funny because it's LEAGUE OF LEGENDS BATTLE ROYALE. This is also currently my most played game on Steam.",
+            /*R99*/"Okay, you saw the image on the Interests page, you have probably seen this somewhere around my other stuff, and if you know me you know my opinions on this game. Reverse: 1999 is a turn-based gacha game and my favourite game to date. If you don't know what a gacha game is, it's a game that has you use in-game currency to gamble for characters and/or items and equipment "
+            + "to use while you play, with their revenue coming from people spending actual money to get these characters. I know that sounds unhealthy and bad(because it is), but Reverse: 1999 is one of few gacha games that are extremely generous with free rewards, including their in-game currency. When I do spend actual money, unlike other gacha I've played I don't "
+            + "spend it because I think \"there's no way I can get this character without spending money\", I spend it because I want to both get something and also support the company, Bluepoch. This game has some of the best and most emotional stories I've seen in any game, and the visuals of the game are extremely pleasing. All the character designs are so good, and each one actually has unique "
+            + "personalities. The gameplay itself is also really fun, and unlike other gachas I've played it's way easier and more enjoyable building random lower tier characters when I'm bored. The OST is also one of my favourites out of every game I've played(I'm using one of their soundtracks for this page). There's too much for me to explain here, so all I'll say is go try it. It's fun. "
+            + "It's free and you can play it on mobile or PC."
+        ];
+
+        const slideThemes = [
+            { body: "#1B700A", box: "#5B3B11", navActive: "#0686FA", navHover: "#055EAD" }, //MC
+            { body: "#412F68", box: "#AA5269", navActive: "#FFAF4F", navHover: "#AF7936" }, //PEAK
+            { body: "#333E63", box: "#414F82", navActive: "#9092BB", navHover: "#696A87" }, //CARK
+            { body: "#1A1F25", box: "#434C5B", navActive: "#A42E24", navHover: "#771F1D" }, //ER
+            { body: "#1C2B3A", box: "#3C5A62", navActive: "#2E6A52", navHover: "#214C3B" } //R99
+        ];
+
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            document.querySelector(".about-box h2").textContent = slideHeader[slideIndex - 1];
+            document.querySelector(".about-box p").textContent = slideText[slideIndex - 1];
+
+            const theme = slideThemes[slideIndex - 1];
+
+            document.body.style.backgroundColor = theme.body;
+            document.querySelector(".about-box").style.backgroundColor = theme.box;
+            document.documentElement.style.setProperty('--nav-active', theme.navActive);
+            document.documentElement.style.setProperty('--nav-hover', theme.navHover);
+        }
+    </script>
+
+    <div class="player-center">
+        <audio id="player" src="audio/Reverse 1999 - Yesterday, Today, Tomorrow.mp3" loop></audio>
+
+        <div id="nowPlaying">Now Playing: </div>
+        <img id="playButton" src="images/jukebox.png" alt="Pause" class="jukebox" tabindex="0">
+    </div>
+
+    <script>
+        const player = document.getElementById("player");
+        const playButton = document.getElementById("playButton");
+        const nowPlayingEl = document.getElementById("nowPlaying");
+
+        window.addEventListener("load", () => {
+            const rawFilename = player.src.split("/").pop();
+            const decoded = decodeURIComponent(rawFilename);
+            const filename = decoded.replace(/\.[^/.]+$/, "");
+            nowPlayingEl.textContent = `Now Playing: ${filename}`;
+
+            player.play().then(() => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            }).catch((error) => {
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+                nowPlayingEl.textContent += " (Autoplay blocked)";
+                console.warn("Autoplay blocked:", error);
+            });
+        });
+
+        playButton.addEventListener("click", () => {
+            if (player.paused) {
+                player.play();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Pause";
+                playButton.classList.remove("paused");
+            } else {
+                player.pause();
+                playButton.src = "images/jukebox.png";
+                playButton.alt = "Play";
+                playButton.classList.add("paused");
+            }
+        });
+    </script>
+
+</body>
+</html>

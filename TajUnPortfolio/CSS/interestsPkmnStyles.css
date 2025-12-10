@@ -1,27 +1,19 @@
-@font-face {
-    font-family: "Va11Halla";
-    src: url("../fonts/CyberpunkWaifus.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+:root {
+    --nav-active: #8E3C60;
+    --nav-hover: #632A43;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
 }
 
 body {
     background-color: #262B44;
     font-family: 'Bodoni Moda', 'Bodoni', serif;
     color: #ffffff;
-}
-
-h1 {
-    font-family: 'Bodoni Moda', 'Bodoni', serif;
-    font-size: 48px;
-    color: #7ACDFF;
-    margin-bottom: 20px;
 }
 
 /*Audio*/
@@ -62,6 +54,66 @@ audio {
 }
 /*End Audio*/
 
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.slide {
+    display: none;
+}
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 10px solid rgba(255, 56, 56);
+        background-color: #A1F1FF;
+    }
+
+.fade {
+    animation: fadeEffect 1s ease;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 12px;
+    margin-top: -22px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
+    transition: 0.2s;
+}
+
+    .prev:hover, .next:hover {
+        color: #7ACDFF;
+    }
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+/*End of slideshow*/
+
 /* Navbar */
 nav {
     width: 100%;
@@ -96,61 +148,44 @@ nav li a {
 }
 
 nav li.active a {
-    background-color: #8E3C60;
+    background-color: var(--nav-active);
 }
 
 nav li a:hover {
-    background-color: #632A43;
+    background-color: var(--nav-hover);
 }
 /*End of Navbar*/
 
-main {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    position: relative;
-}
-
 .container {
-    position: relative;
     max-width: 900px;
     width: 100%;
+    margin: 40px auto 0;
     padding: 0 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.side-image {
-    position: absolute;
-    width: 200px;
-    height: auto;
-    z-index: 1;
-}
-
-.left {
-    left: -60px;
-    top: 0;
-}
-
-.right {
-    right: -50px;
-    bottom: 0;
-    width: 200px;
-}
-
-.qna-box {
+/* About Box */
+.about-box {
     background-color: #23304E;
     padding: 40px;
     border-radius: 25px;
     max-width: 600px;
+    width: 100%;
     text-align: center;
-    z-index: 2;
-    position: relative;
-    border: 3px solid #7ACDFF;
 }
 
-.qna-space {
-    width: 100%;
-    margin-bottom: 15px; /* adds space between sections */
-}
+    .about-box h1 {
+        font-family: 'Bodoni Moda', 'Bodoni', serif;
+        font-size: 48px;
+        color: #7ACDFF;
+        margin-bottom: 20px;
+    }
+
+    .about-box p {
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #ffffff;
+    }

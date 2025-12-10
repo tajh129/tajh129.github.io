@@ -17,13 +17,6 @@ body {
     color: #ffffff;
 }
 
-h1 {
-    font-family: 'Bodoni Moda', 'Bodoni', serif;
-    font-size: 48px;
-    color: #7ACDFF;
-    margin-bottom: 20px;
-}
-
 /*Audio*/
 .player-center {
     display: flex;
@@ -103,7 +96,6 @@ nav li a:hover {
     background-color: #632A43;
 }
 /*End of Navbar*/
-
 main {
     display: flex;
     justify-content: center;
@@ -121,6 +113,22 @@ main {
     justify-content: center;
 }
 
+.p-link {
+    color:white;
+}
+
+.p-link:visited {
+    color: #7ACDFF;
+}
+
+.p-link:hover {
+    color: #7ACDFF;
+}
+
+.p-link:active {
+    color: white;
+}
+
 .side-image {
     position: absolute;
     width: 200px;
@@ -129,28 +137,53 @@ main {
 }
 
 .left {
-    left: -60px;
+    left: -230px;
     top: 0;
 }
 
-.right {
-    right: -50px;
-    bottom: 0;
-    width: 200px;
+.image {
+    position: center;
+    width: 250px;
+    height: auto;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
-.qna-box {
+.image:hover {
+    transform: scale(1.1);
+}
+
+.about-box {
     background-color: #23304E;
     padding: 40px;
     border-radius: 25px;
-    max-width: 600px;
+    max-width: 1200px;
     text-align: center;
     z-index: 2;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 3px solid #7ACDFF;
 }
 
-.qna-space {
-    width: 100%;
-    margin-bottom: 15px; /* adds space between sections */
-}
+    .about-box .image-row {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 20px;
+    }
+
+    .about-box h1 {
+        font-family: 'Bodoni Moda', 'Bodoni', serif;
+        font-size: 48px;
+        color: #7ACDFF;
+        margin-bottom: 20px;
+    }
+
+    .about-box p {
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #ffffff;
+    }

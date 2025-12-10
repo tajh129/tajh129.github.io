@@ -138,6 +138,7 @@ main {
     text-align: center;
     z-index: 2;
     position: relative;
+    border: 3px solid #7ACDFF;
 }
 
     .welcome-box h1 {

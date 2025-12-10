@@ -155,6 +155,7 @@ main {
     text-align: center;
     z-index: 2;
     position: relative;
+    border: 3px solid #7ACDFF;
 }
 
     .about-box h1 {
