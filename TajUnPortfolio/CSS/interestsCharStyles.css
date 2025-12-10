@@ -16,49 +16,11 @@ body {
     color: #ffffff;
 }
 
-/*Audio*/
-.player-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-
-audio {
-    display: none;
-}
-
-.jukebox {
-    width: 90px;
-    height: 90px;
-    cursor: pointer;
-    transition: filter 0.3s ease, transform 0.2s ease;
-    vertical-align: middle;
-}
-
-    .jukebox:hover {
-        transform: scale(1.1);
-    }
-
-    .jukebox.paused {
-        filter: brightness(0.6);
-    }
-
-#nowPlaying {
-    font-family: 'Va11Halla', 'Bodoni Moda', serif;
-    font-size: 16px;
-    margin-top: 20px;
-}
-/*End Audio*/
-
 /* Slideshow */
 .slideshow-container {
     position: relative;
-    max-width: 600px;
-    height: 315px;
+    max-width: 700px;
+    max-height: 400px;
     margin: auto;
     padding-top: 40px;
 }
@@ -68,8 +30,8 @@ audio {
 }
 
     .slide iframe {
-        width: 600px;
-        height:315px;
+        width: 700px;
+        height:368px;
         border-radius: 10px;
         border: 3px solid rgba(168, 169, 172);
     }
